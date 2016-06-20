@@ -19,6 +19,7 @@
 oppia.directive('collectionFeedbackTab', [function() {
   return {
     restrict: 'E',
+    scope: {},
     templateUrl: 'inline/collection_feedback_tab_directive',
     controller: [function() {}]
   };

@@ -19,6 +19,7 @@
 oppia.directive('collectionHistoryTab', [function() {
   return {
     restrict: 'E',
+    scope: {},
     templateUrl: 'inline/collection_history_tab_directive',
     controller: [function() {}]
   };

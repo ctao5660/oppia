@@ -19,6 +19,7 @@
 oppia.directive('collectionNodeCreator', [function() {
   return {
     restrict: 'E',
+    scope: {},
     templateUrl: 'collectionEditor/newNodeCreator',
     controller: [
       '$scope', '$http', '$window', '$filter', 'alertsService',

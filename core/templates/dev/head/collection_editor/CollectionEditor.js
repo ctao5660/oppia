@@ -31,8 +31,10 @@ oppia.constant(
 oppia.constant(
   'COLLECTION_TITLE_INPUT_FOCUS_LABEL', 'collectionTitleInputFocusLabel');
 
-oppia.controller('CollectionEditor', ['CollectionEditorStateService',
-  function(CollectionEditorStateService) {
+oppia.controller('CollectionEditor', [
+  '$scope', 'CollectionEditorStateService', 'routerService',
+  function($scope, CollectionEditorStateService, routerService) {
+    $scope.getTabStatuses = routerService.getTabStatuses;
     // Load the collection to be edited.
     CollectionEditorStateService.loadCollection(GLOBALS.collectionId);
   }

@@ -20,6 +20,7 @@
 oppia.directive('collectionSkillList', [function() {
   return {
     restrict: 'E',
+    scope: {},
     templateUrl: 'inline/collection_skill_list_directive',
     controller: ['$scope', 'CollectionEditorStateService',
     function($scope, CollectionEditorStateService) {

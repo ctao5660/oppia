@@ -21,6 +21,7 @@
 oppia.directive('collectionDetailsEditor', [function() {
   return {
     restrict: 'E',
+    scope: {},
     templateUrl: 'inline/collection_details_editor_directive',
     controller: [
       '$scope', 'CollectionEditorStateService', 'CollectionUpdateService',

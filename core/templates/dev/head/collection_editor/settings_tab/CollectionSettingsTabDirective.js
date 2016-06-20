@@ -19,6 +19,7 @@
 oppia.directive('collectionSettingsTab', [function() {
   return {
     restrict: 'E',
+    scope: {},
     templateUrl: 'inline/collection_settings_tab_directive',
     controller: [function() {}]
   };

@@ -19,6 +19,7 @@
 oppia.directive('collectionEditorNavbar', [function() {
   return {
     restrict: 'E',
+    scope: {},
     templateUrl: 'inline/collection_editor_navbar_directive',
     controller: [
       '$scope', '$modal', 'alertsService', 'routerService', 'UndoRedoService',
