@@ -218,6 +218,9 @@ URLS = MAPREDUCE_HANDLERS + [
     get_redirect_route(
         feconf.EXPLORATION_SUMMARIES_DATA_URL,
         library.ExplorationSummariesHandler),
+    get_redirect_route(
+        feconf.COLLECTION_SUMMARIES_DATA_URL,
+        library.CollectionSummariesHandler),
 
     get_redirect_route(r'/profile/<username>', profile.ProfilePage),
     get_redirect_route(
@@ -383,6 +386,12 @@ URLS = MAPREDUCE_HANDLERS + [
         email_dashboard.EmailDashboardDataHandler),
     get_redirect_route(
         r'/querystatuscheck', email_dashboard.QueryStatusCheck),
+    get_redirect_route(
+        r'/emaildashboardresult/<query_id>',
+        email_dashboard.EmailDashboardResultPage),
+    get_redirect_route(
+        r'/emaildashboardcancelresult/<query_id>',
+        email_dashboard.EmailDashboardCancelEmailHandler),
     get_redirect_route(
         r'%s' % feconf.EXPLORATION_METADATA_SEARCH_URL,
         collection_editor.ExplorationMetadataSearchHandler),
