@@ -327,6 +327,9 @@ class UserProfilePictureOneOffJob(jobs.BaseMapReduceOneOffJobManager):
 
 
 class UserLastExplorationActivityOneOffJob(jobs.BaseMapReduceOneOffJobManager):
+    """One-off job that updates the user last edit on an
+    exploration activity, only if the exploration exists.
+    """
 
     @classmethod
     def entity_classes_to_map_over(cls):

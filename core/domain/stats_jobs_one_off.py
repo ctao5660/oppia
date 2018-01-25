@@ -802,6 +802,19 @@ class StatisticsAuditV1(jobs.BaseMapReduceOneOffJobManager):
     @classmethod
     def require_non_negative(
             cls, exp_id, exp_version, property_name, value, state_name=None):
+        """Returns the Negative count of the exploration according
+        to the passed property name.
+
+        Args:
+            exp_id: str. Exploration ID.
+            exp_version: str. Exploration version.
+            property_name: str. Property name.
+            value: list. Values of different properties for the exploration.
+
+        Returns:
+            str. Formatted String containing the information of the negative
+                count value if the value of the property is negative.
+        """
         state_name = state_name if state_name else ''
         if value[property_name] < 0:
             yield (
