@@ -31,19 +31,15 @@ oppia.factory('TextInputPredictionService', [
         var cvVocabulary = classifierData.cv_vocabulary;
         // Upon investigation it was deterimined that Oppia-ml's text predictor
         // predicted the category of 3 when given an empty(zero) vector. To
-        // maintain consistency with Oppia-ml, the frontend will also default to 3
-        // when given an empty(zero) vector.
-        var prediction = 3;
+        // maintain consistency with Oppia-ml, the frontend will also default to 
+        // 3 when given an empty(zero) vector.
         var svmData = classifierData.SVM;
-
+        textInput = textInput.toLowerCase();
         // Tokenize the text input.
-        var textInputTokens = TextInputTokenizer.generateTokens(textInput.toLowerCase());
-
-        if (textInputTokens !== null) {
-          var textVector = CountVectorizerService.vectorize(
-            textInputTokens, cvVocabulary);
+        var textInputTokens = TextInputTokenizer.generateTokens(textInput);
+        var textVector = CountVectorizerService.vectorize(
+          textInputTokens, cvVocabulary);
           prediction = SVMPredictionService.predict(svmData, textVector);
-        }
         return prediction;
       }
     };
